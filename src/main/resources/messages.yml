@@ -1,0 +1,5 @@
+messages:
+  use_permission_message: true
+  use_permission_sound: true
+  permission_message: <#ef442a>Only players with op can execute this command!
+  permission_sound: entity.illusioner.hurt

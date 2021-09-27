@@ -1,0 +1,5 @@
+custom blocks:
+  jukebox:
+    hardness: 2
+    tool: axe
+    level: iron

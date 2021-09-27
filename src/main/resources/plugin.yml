@@ -1,0 +1,11 @@
+name: MoBlocks
+main: me.pesekjak.moblocks.MoBlocksPlugin
+version: 1.0
+api-version: 1.17
+description: Plugin that adds behavior for custom blocks.
+author: pesekjan
+
+commands:
+  moblocks:
+    description: Main command for MoBlocks plugin
+    usage: /moblocks
