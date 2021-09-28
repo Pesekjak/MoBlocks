@@ -36,8 +36,17 @@ public class MoBlocksCommand implements CommandExecutor {
                 }
             }
             else {
-                player.sendMessage(ColorUtils.applyColor("<#ef442a>Only players with op can execute this command!"));
-                player.playSound(player.getLocation(), "entity.illusioner.hurt", 1, 1);
+                String permissionMessage = (String) MoBlocksPlugin.messages.getConfig().get("messages.permission_message");
+                String permissionSound = (String) MoBlocksPlugin.messages.getConfig().get("messages.permission_sound");
+                boolean sendMessage = (Boolean) MoBlocksPlugin.messages.getConfig().get("messages.use_permission_message");
+                boolean playSound = (Boolean) MoBlocksPlugin.messages.getConfig().get("messages.use_permission_sound");
+                if(sendMessage) {
+                    player.sendMessage(ColorUtils.applyColor(permissionMessage));
+                }
+                if(playSound) {
+                    assert permissionSound != null;
+                    player.playSound(player.getLocation(), permissionSound, 1, 1);
+                }
             }
         }
         return true;
