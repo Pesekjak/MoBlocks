@@ -1,5 +1,5 @@
 custom blocks:
-  jukebox:
+  minecraft:grass_block[snowy=false]:
     hardness: 2
     tool: axe
     level: iron
