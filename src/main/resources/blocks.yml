@@ -3,3 +3,4 @@ custom blocks:
     hardness: 2
     tool: axe
     level: iron
+    sound: block.stone.break
