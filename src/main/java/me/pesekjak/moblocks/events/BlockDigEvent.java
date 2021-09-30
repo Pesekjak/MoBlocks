@@ -1,6 +1,7 @@
 package me.pesekjak.moblocks.events;
 
 import me.pesekjak.moblocks.MoBlocksPlugin;
+import me.pesekjak.moblocks.customblocks.CustomBlockManager;
 import me.pesekjak.moblocks.customevents.BlockDigCustomEvent;
 import me.pesekjak.moblocks.utils.BlockUtils;
 import net.minecraft.network.protocol.game.PacketPlayInBlockDig;
@@ -16,7 +17,6 @@ import java.util.Collection;
 
 public class BlockDigEvent implements Listener {
 
-
     @EventHandler
     public void onBlockDig(final BlockDigCustomEvent e) {
 
@@ -27,7 +27,7 @@ public class BlockDigEvent implements Listener {
 
         String stringBlockdata = BlockUtils.getSimpleData(block);
 
-        if(!(MoBlocksPlugin.blocks.getConfig().get("custom blocks." + stringBlockdata + ".hardness") == null)) {
+        if (CustomBlockManager.get().isCustomBlock(stringBlockdata)) {
             if(e.getAction() == PacketPlayInBlockDig.EnumPlayerDigType.a) {
                 e.getPlayer().addPotionEffects(potionCollection);
             }
