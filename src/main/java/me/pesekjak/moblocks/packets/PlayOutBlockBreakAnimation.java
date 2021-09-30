@@ -2,7 +2,6 @@ package me.pesekjak.moblocks.packets;
 
 import net.minecraft.core.BlockPosition;
 import net.minecraft.network.protocol.game.PacketPlayOutBlockBreakAnimation;
-import net.minecraft.network.protocol.game.PacketPlayOutNamedEntitySpawn;
 import net.minecraft.server.network.PlayerConnection;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_17_R1.entity.CraftPlayer;
