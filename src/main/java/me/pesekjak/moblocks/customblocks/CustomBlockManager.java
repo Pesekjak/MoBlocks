@@ -16,14 +16,14 @@ public class CustomBlockManager {
         return singleton;
     }
 
-    public static CustomBlock getCustomBlock(String name) {
+    public CustomBlock getCustomBlock(String name) {
         if(registry.containsKey(name)) {
             return registry.get(name);
         }
         return null;
     }
 
-    public static CustomBlock getCustomBlock(Block block) {
+    public CustomBlock getCustomBlock(Block block) {
         String stringBlockdata = BlockUtils.getSimpleData(block);
         if(registry.containsKey(stringBlockdata)) {
             return registry.get(stringBlockdata);
@@ -31,28 +31,28 @@ public class CustomBlockManager {
         return null;
     }
 
-    public static Boolean isCustomBlock(Block block) {
+    public Boolean isCustomBlock(Block block) {
         String stringBlockdata = BlockUtils.getSimpleData(block);
         return registry.containsKey(stringBlockdata);
     }
 
-    public static Boolean isCustomBlock(String data) {
+    public Boolean isCustomBlock(String data) {
         return registry.containsKey(data);
     }
 
-    public static void register(CustomBlock customBlock) {
+    public void register(CustomBlock customBlock) {
         registry.put(customBlock.getId(), customBlock);
     }
 
-    public static void unregister(String id) {
+    public void unregister(String id) {
         registry.remove(id);
     }
 
-    public static Map<String, CustomBlock> getRegistry() {
+    public Map<String, CustomBlock> getRegistry() {
         return registry;
     }
 
-    public static void clear() {
+    public void clear() {
         registry.clear();
     }
 
