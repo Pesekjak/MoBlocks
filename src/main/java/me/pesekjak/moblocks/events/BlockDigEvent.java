@@ -7,6 +7,7 @@ import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -44,6 +45,13 @@ public class BlockDigEvent implements Listener {
             }
         }
 
+    }
+
+    public boolean isRightTool(ItemStack tool, String category) {
+        if(category.equals("hand")) {
+            return true;
+        }
+        return tool.getType().toString().equalsIgnoreCase(category);
     }
 
 }
